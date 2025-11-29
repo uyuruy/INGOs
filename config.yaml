@@ -1,0 +1,92 @@
+# config.yaml — Career-Page Watchlist for Logistics / Operations / Supply-Chain Roles
+
+scan:
+  recency_days: 14
+  keywords:
+    - logistics
+    - supply chain
+    - procurement
+    - operations
+    - warehouse
+    - transport
+    - fleet
+    - country logistics
+    - head of logistics
+    - inventory
+    - warehouse manager
+    - operations manager
+    - supply-chain manager
+  orgs:
+
+    - name: "Action contre la Faim (ACF)"
+      url: "https://www.actioncontrelafaim.org/en/careers/"       # Career page (English) — often lists Logistics/Procurement roles
+      note: "Uses static HTML; easily scraped."
+
+    - name: "World Food Programme (WFP)"
+      url: "https://jobs.wfp.org/careers/"                         # Official WFP job portal
+      note: "Uses WFP job portal; simple list with posting dates."
+
+    - name: "Clinton Health Access Initiative (CHAI)"
+      url: "https://www.clintonhealthaccess.org/careers"
+      note: "Static career page; includes location and posting date."
+
+    - name: "International Organization for Migration (IOM)"
+      url: "https://www.iom.int/careers"
+      note: "Simple HTML list; include procurement/logistics roles."
+
+    - name: "UNHCR"
+      url: "https://www.unhcr.org/careers.html"
+      note: "Official jobs page; positions often include Supply & Logistics."
+
+    - name: "Médecins Sans Frontières (MSF)"
+      url: "https://www.msf.org/join-msf"                          # career join page
+      note: "May require manual navigation; check subpage for logistics roles."
+
+    - name: "Jhpiego"
+      url: "https://www.jhpiego.org/careers/"
+      note: "Static page; occasionally posts supply-chain/operations roles."
+
+    - name: "Amref Health Africa"
+      url: "https://amref.org/work-with-us/"                      # “Work with us” page
+      note: "Check under ‘Current Vacancies’ — static site."
+
+    - name: "Save the Children (International)"
+      url: "https://careers.savethechildren.net/"                 # official career portal
+      note: "Supply-chain or country logistics roles are often posted."
+
+    - name: "International Rescue Committee (IRC)"
+      url: "https://careers.rescue.org/"                         # official IRC career portal
+      note: "Look for Supply Chain / Logistics / Operations roles."
+
+    - name: "FHI 360"
+      url: "https://www.fhi360.org/careers"
+      note: "Static HTML list; search 'logistics' keyword."
+
+    - name: "CARE International"
+      url: "https://www.care-international.org/careers"
+      note: "Global CARE career page; country-level ops may appear."
+
+    - name: "WHO (World Health Organization)"
+      url: "https://www.who.int/careers"
+      note: "Official WHO portal; filter by 'Operations' or 'Logistics'."
+
+    - name: "PATH"
+      url: "https://www.path.org/careers/"
+      note: "Check under country-projects or operations roles."
+
+    - name: "JSI (John Snow, Inc.)"
+      url: "https://www.jsi.com/careers"
+      note: "Health-systems NGO; opportunities sometimes include procurement / supply-chain."
+
+email:
+  provider: smtp
+  from: "yourname@example.com"
+  to:
+    - "your.email@example.com"
+  subject_prefix: "[Job Alert]"
+
+smtp:
+  host: "smtp.gmail.com"
+  port: 587
+  username: "your.email@example.com"
+  password: "YOUR_APP_SPECIFIC_PASSWORD"  # use app password, not plain account password
