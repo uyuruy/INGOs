@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup
 import yaml
 import smtplib
 from email.mime.text import MIMEText
-from datetime import datetime, timedelta
 
 
 def load_config():
@@ -13,9 +12,8 @@ def load_config():
 
 def fetch_jobs(url, keywords):
     """
-    Fetches ALL text from the page and finds any lines matching keywords.
-    This works even when sites change layout, because it does text scanning instead
-    of HTML-structure parsing.
+    Fetches page text and checks for keyword matches.
+    Simple text scanning so it works even if site layout changes.
     """
     try:
         r = requests.get(url, timeout=20)
@@ -27,11 +25,9 @@ def fetch_jobs(url, keywords):
     text = soup.get_text(separator="\n").lower()
 
     matched_lines = []
-
     for kw in keywords:
         if kw.lower() in text:
             matched_lines.append(f"Keyword found: '{kw}' at {url}")
-
     return matched_lines
 
 
@@ -61,7 +57,6 @@ def main():
         report.append(f"\n=== {name} ===\nURL: {url}")
 
         hits = fetch_jobs(url, keywords)
-
         if hits:
             total_hits += len(hits)
             for h in hits:
@@ -78,3 +73,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
