@@ -3,6 +3,8 @@ from bs4 import BeautifulSoup
 import yaml
 import smtplib
 from email.mime.text import MIMEText
+from datetime import datetime, timedelta
+import re
 
 
 def load_config():
@@ -10,11 +12,30 @@ def load_config():
         return yaml.safe_load(f)
 
 
-def fetch_jobs(url, keywords):
+def parse_dates(text):
     """
-    Fetches page text and checks for keyword matches.
-    Simple text scanning so it works even if site layout changes.
+    Extract date strings from text in common formats.
+    Returns list of datetime objects.
     """
+    patterns = [
+        r"\b\d{1,2}\s+[A-Za-z]{3,9}\s+\d{4}\b",   # 24 Nov 2025
+        r"\b\d{4}-\d{2}-\d{2}\b",                 # 2025-11-24
+        r"\b[A-Za-z]{3,9}\s+\d{1,2},\s+\d{4}\b"   # Dec 15, 2025
+    ]
+    dates = []
+    for pat in patterns:
+        for match in re.findall(pat, text):
+            for fmt in ["%d %b %Y", "%Y-%m-%d", "%b %d, %Y"]:
+                try:
+                    dt = datetime.strptime(match, fmt)
+                    dates.append(dt)
+                    break
+                except:
+                    continue
+    return dates
+
+
+def fetch_jobs(url, keywords, cutoff_days):
     try:
         r = requests.get(url, timeout=20)
         r.raise_for_status()
@@ -25,9 +46,21 @@ def fetch_jobs(url, keywords):
     text = soup.get_text(separator="\n").lower()
 
     matched_lines = []
+    cutoff = datetime.now() - timedelta(days=cutoff_days)
+
     for kw in keywords:
         if kw.lower() in text:
-            matched_lines.append(f"Keyword found: '{kw}' at {url}")
+            # look for dates near keyword
+            dates = parse_dates(text)
+            if dates:
+                recent = [d for d in dates if d >= cutoff]
+                if recent:
+                    matched_lines.append(f"Keyword '{kw}' with recent date at {url}")
+                else:
+                    matched_lines.append(f"Keyword '{kw}' but dates look old at {url}")
+            else:
+                matched_lines.append(f"Keyword '{kw}' (no date found) at {url}")
+
     return matched_lines
 
 
@@ -47,6 +80,7 @@ def send_email(smtp_cfg, email_cfg, body):
 def main():
     config = load_config()
     keywords = config["scan"]["keywords"]
+    cutoff_days = config["scan"].get("recency_days", 30)  # default 30 if not set
 
     report = []
     total_hits = 0
@@ -56,7 +90,7 @@ def main():
         url = org["url"]
         report.append(f"\n=== {name} ===\nURL: {url}")
 
-        hits = fetch_jobs(url, keywords)
+        hits = fetch_jobs(url, keywords, cutoff_days)
         if hits:
             total_hits += len(hits)
             for h in hits:
@@ -73,4 +107,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
