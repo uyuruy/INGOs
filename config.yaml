@@ -16,46 +16,46 @@ scan:
     - supply-chain manager
   orgs:
     - name: "Action contre la Faim (ACF)"
-      url: "https://www.actioncontrelafaim.org/en/our-job-offers/"
+      url: "https://recrutement.actioncontrelafaim.org/en/our-offers/"
 
     - name: "World Food Programme (WFP)"
-      url: "https://www.wfp.org/careers"
+      url: "https://wd3.myworkdaysite.com/en-GB/recruiting/wfp/job_openings"
 
     - name: "Clinton Health Access Initiative (CHAI)"
       url: "https://careers-chai.icims.com/jobs"
 
     - name: "International Organization for Migration (IOM)"
-      url: "https://recruit.iom.int/"
+      url: "https://fa-evlj-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/jobs"
 
     - name: "UNHCR"
-      url: "https://www.unhcr.org/careers.html"
+      url: "https://unhcr.wd3.myworkdayjobs.com/en-GB/External"
 
     - name: "Médecins Sans Frontières (MSF)"
-      url: "https://www.msf.org/work-msf"
+      url: "https://www.msf.org/jobs"
 
     - name: "Jhpiego"
-      url: "https://jhpiego.org/careers/"
+      url: "https://jobs-jhpiego.icims.com/jobs/search"
 
     - name: "Amref Health Africa"
       url: "https://amref.org/vacancies/"
 
     - name: "Save the Children (International)"
-      url: "https://www.savethechildren.net/careers"
+      url: "https://www.savethechildren.net/careers/apply"
 
     - name: "International Rescue Committee (IRC)"
-      url: "https://careers.rescue.org/"
+      url: "https://theirc.wd1.myworkdayjobs.com/en-US/External_Careers"
 
     - name: "FHI 360"
-      url: "https://www.fhi360.org/join-our-team/"
+      url: "https://fhi.wd1.myworkdayjobs.com/en-GB/FHI_360_External_Career_Portal"
 
     - name: "CARE International"
-      url: "https://www.care.org/careers/"
+      url: "https://phg.tbe.taleo.net/phg02/ats/careers/v2/searchResults?org=CAREUSA&cws=52"
 
     - name: "WHO (World Health Organization)"
-      url: "https://www.who.int/careers"
+      url: "https://careers.who.int/careersection/ex/jobsearch.ftl"
 
     - name: "PATH"
-      url: "https://www.path.org/who-we-are/careers/"
+      url: "https://path.wd1.myworkdayjobs.com/External"
 
     - name: "JSI (John Snow, Inc.)"
       url: "https://careers.jsi.com/JSIInternet/Careers/index.cfm"
