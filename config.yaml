@@ -1,5 +1,6 @@
-scan:
+  scan:
   recency_days: 14
+  allow_undated_jobs: true
   keywords:
     - logistics
     - supply chain
@@ -55,7 +56,7 @@ scan:
       url: "https://careers.who.int/careersection/ex/jobsearch.ftl"
 
     - name: "PATH"
-      url: "https://path.wd1.myworkdayjobs.com/External"
+      url: "https://info.path.org/myworkdayjobs/external?_gl=1*1uvyn5h*_gcl_au*MTU2NDQ0NjQ0MC4xNzY0NTk5NTI2*_ga*ODM4NTM1Mjk2LjE3NjQ1OTk1Mjc.*_ga_YBSE7ZKDQM*czE3NjQ1OTk1MjYkbzEkZzEkdDE3NjQ2MDExODUkajYwJGwwJGgw"
 
     - name: "JSI (John Snow, Inc.)"
       url: "https://careers.jsi.com/JSIInternet/Careers/index.cfm"
@@ -72,3 +73,4 @@ smtp:
   port: 587
   username: "usiaphreteheri@gmail.com"
   password: "ubxnvmhftlbebuwb"
+  
