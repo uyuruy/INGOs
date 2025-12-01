@@ -1,5 +1,3 @@
-# config.yaml — Career-Page Watchlist for Logistics / Operations / Supply-Chain Roles
-
 scan:
   recency_days: 14
   keywords:
@@ -17,66 +15,50 @@ scan:
     - operations manager
     - supply-chain manager
   orgs:
-
     - name: "Action contre la Faim (ACF)"
-      url: "https://www.actioncontrelafaim.org/en/careers/"       # Career page (English) — often lists Logistics/Procurement roles
-      note: "Uses static HTML; easily scraped."
+      url: "https://www.actioncontrelafaim.org/en/our-job-offers/"
 
     - name: "World Food Programme (WFP)"
-      url: "https://jobs.wfp.org/careers/"                         # Official WFP job portal
-      note: "Uses WFP job portal; simple list with posting dates."
+      url: "https://www.wfp.org/careers"
 
     - name: "Clinton Health Access Initiative (CHAI)"
-      url: "https://www.clintonhealthaccess.org/careers"
-      note: "Static career page; includes location and posting date."
+      url: "https://careers-chai.icims.com/jobs"
 
     - name: "International Organization for Migration (IOM)"
-      url: "https://www.iom.int/careers"
-      note: "Simple HTML list; include procurement/logistics roles."
+      url: "https://recruit.iom.int/"
 
     - name: "UNHCR"
       url: "https://www.unhcr.org/careers.html"
-      note: "Official jobs page; positions often include Supply & Logistics."
 
     - name: "Médecins Sans Frontières (MSF)"
-      url: "https://www.msf.org/join-msf"                          # career join page
-      note: "May require manual navigation; check subpage for logistics roles."
+      url: "https://www.msf.org/work-msf"
 
     - name: "Jhpiego"
-      url: "https://www.jhpiego.org/careers/"
-      note: "Static page; occasionally posts supply-chain/operations roles."
+      url: "https://jhpiego.org/careers/"
 
     - name: "Amref Health Africa"
-      url: "https://amref.org/work-with-us/"                      # “Work with us” page
-      note: "Check under ‘Current Vacancies’ — static site."
+      url: "https://amref.org/vacancies/"
 
     - name: "Save the Children (International)"
-      url: "https://careers.savethechildren.net/"                 # official career portal
-      note: "Supply-chain or country logistics roles are often posted."
+      url: "https://www.savethechildren.net/careers"
 
     - name: "International Rescue Committee (IRC)"
-      url: "https://careers.rescue.org/"                         # official IRC career portal
-      note: "Look for Supply Chain / Logistics / Operations roles."
+      url: "https://careers.rescue.org/"
 
     - name: "FHI 360"
-      url: "https://www.fhi360.org/careers"
-      note: "Static HTML list; search 'logistics' keyword."
+      url: "https://www.fhi360.org/join-our-team/"
 
     - name: "CARE International"
-      url: "https://www.care-international.org/careers"
-      note: "Global CARE career page; country-level ops may appear."
+      url: "https://www.care.org/careers/"
 
     - name: "WHO (World Health Organization)"
       url: "https://www.who.int/careers"
-      note: "Official WHO portal; filter by 'Operations' or 'Logistics'."
 
     - name: "PATH"
-      url: "https://www.path.org/careers/"
-      note: "Check under country-projects or operations roles."
+      url: "https://www.path.org/who-we-are/careers/"
 
     - name: "JSI (John Snow, Inc.)"
-      url: "https://www.jsi.com/careers"
-      note: "Health-systems NGO; opportunities sometimes include procurement / supply-chain."
+      url: "https://careers.jsi.com/JSIInternet/Careers/index.cfm"
 
 email:
   provider: smtp
