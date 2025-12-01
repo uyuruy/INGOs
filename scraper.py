@@ -36,8 +36,13 @@ def parse_dates(text):
 
 
 def fetch_jobs(url, keywords, cutoff_days):
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                      "AppleWebKit/537.36 (KHTML, like Gecko) "
+                      "Chrome/120.0 Safari/537.36"
+    }
     try:
-        r = requests.get(url, timeout=20)
+        r = requests.get(url, headers=headers, timeout=30, verify=True)
         r.raise_for_status()
     except Exception as e:
         return [f"[ERROR accessing {url}] {e}"]
@@ -50,7 +55,6 @@ def fetch_jobs(url, keywords, cutoff_days):
 
     for kw in keywords:
         if kw.lower() in text:
-            # look for dates near keyword
             dates = parse_dates(text)
             if dates:
                 recent = [d for d in dates if d >= cutoff]
@@ -80,7 +84,7 @@ def send_email(smtp_cfg, email_cfg, body):
 def main():
     config = load_config()
     keywords = config["scan"]["keywords"]
-    cutoff_days = config["scan"].get("recency_days", 30)  # default 30 if not set
+    cutoff_days = config["scan"].get("recency_days", 30)
 
     report = []
     total_hits = 0
