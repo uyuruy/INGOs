@@ -80,13 +80,13 @@ scan:
 
 email:
   provider: smtp
-  from: "yourname@example.com"
+  from: "usiaphreteheri@gmail.com"
   to:
-    - "your.email@example.com"
+    - "usiaphreteheri@gmail.com"
   subject_prefix: "[Job Alert]"
 
 smtp:
   host: "smtp.gmail.com"
   port: 587
-  username: "your.email@example.com"
-  password: "YOUR_APP_SPECIFIC_PASSWORD"  # use app password, not plain account password
+  username: "usiaphreteheri@gmail.com"
+  password: "ombuqpkxjcgghqc"
